@@ -5,7 +5,7 @@ import qs from "qs";
 import { twMerge } from "tailwind-merge";
 
 import { aspectRatioOptions } from "@/constants";
-
+//import Header from "@/components/shared/Header";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -24,10 +24,7 @@ export const handleError = (error: unknown) => {
     // This is an unknown type of error
     console.error(error);
     throw new Error(`Unknown error: ${JSON.stringify(error)}`);
-  }
-};
-
-// PLACEHOLDER LOADER - while image is transforming
+  }};
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -59,7 +56,6 @@ export const formUrlQuery = ({
   value,
 }: FormUrlQueryParams) => {
   const params = { ...qs.parse(searchParams.toString()), [key]: value };
-
   return `${window.location.pathname}?${qs.stringify(params, {
     skipNulls: true,
   })}`;

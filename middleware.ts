@@ -1,13 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
  
 export default authMiddleware({
-  publicRoutes: ["/api/webhooks/clerk"],
-
-  // Routes that can be accessed while signed out
-  // Routes that can always be accessed, and have
-  // no authentication information
-
-});
+  publicRoutes: ["/","/api/webhooks/clerk"],});
  
 export const config = {
   // Protects all routes, including api/trpc.
